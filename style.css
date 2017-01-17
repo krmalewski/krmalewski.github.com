@@ -14,10 +14,10 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  -webkit-transition: 1s ease-in-out;
-  -moz-transition: 1s ease-in-out;
-  -o-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
+  -webkit-transition: 1.5s ease-in-out;
+  -moz-transition: 1.5s ease-in-out;
+  -o-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
 }
 
 header.slideIn {
@@ -94,7 +94,10 @@ header.slideIn {
   max-width: 70%;
   max-height: 70%;
   padding: 5px 5px;
-  opacity: 0.6;
+/*  opacity: 0.6;*/
+  opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
 }
 
 
