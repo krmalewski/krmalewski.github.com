@@ -449,3 +449,36 @@
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
 }
+
+@-webkit-keyframes fadeInUpScroll {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUpScroll {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUpScroll {
+  -webkit-animation-name: fadeInUpScroll;
+  animation-name: fadeInUpScroll;
+}

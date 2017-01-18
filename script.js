@@ -3,8 +3,8 @@ console.log('JS connected');
 
 $(() => {
   const windowHeight = $(window).height();
-  const windowWidth = $(window).width()
-  $('.land').css('height', windowHeight);
+  $('.land').css('height', windowHeight - 50);
+  $('.scroll').css('margin-top', windowHeight - 50);
 
   const header = $('.header');
   setTimeout(() => {
@@ -14,6 +14,8 @@ $(() => {
   const github = $('#github-logo');
   const email = $('#email-logo');
   const linkedIn = $('#linked-in');
+  const scroll = $('#scroll-div');
+  const scrollIcon = $('#scroll');
 
   setTimeout(() => {
     email.addClass('animated2 fadeInUp');
@@ -26,6 +28,14 @@ $(() => {
   setTimeout(() => {
     linkedIn.addClass('animated2 fadeInUp');
   }, 1600);
+
+  setTimeout(() => {
+    scroll.addClass('animated fadeInUpScroll');
+  }, 2000);
+
+  setTimeout(() => {
+    scrollIcon.addClass('animated infinite bounce')
+  }, 3000);
 
   github.on('mouseenter', function() {
     github.css({
