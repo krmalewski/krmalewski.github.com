@@ -2,6 +2,8 @@
 console.log('JS connected');
 
 $(() => {
+
+  console.log($(window).width());
   // set landing page to height of window
   const windowHeight = $(window).height();
   $('.land').css('height', windowHeight - 50);
@@ -37,19 +39,6 @@ $(() => {
   }, 3000);
 
   // add animations to icons on mouseenter
-  github.on('mouseenter', function() {
-    github.css({
-      'opacity': '0.6',
-      'transform': 'none'
-    });
-    github.removeClass('animated2 fadeInUp');
-    github.addClass('animated bounce');
-  })
-  github.on('mouseout', function() {
-    github.removeClass('animated');
-    github.removeClass('bounce')
-  })
-
   email.on('mouseenter', function() {
     email.css({
       'opacity': '0.6',
@@ -61,6 +50,19 @@ $(() => {
   email.on('mouseout', function() {
     email.removeClass('animated');
     email.removeClass('rubberBand')
+  })
+
+  github.on('mouseenter', function() {
+    github.css({
+      'opacity': '0.6',
+      'transform': 'none'
+    });
+    github.removeClass('animated2 fadeInUp');
+    github.addClass('animated bounce');
+  })
+  github.on('mouseout', function() {
+    github.removeClass('animated');
+    github.removeClass('bounce')
   })
 
   linkedIn.on('mouseenter', function() {

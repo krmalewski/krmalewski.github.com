@@ -102,6 +102,11 @@ header.slideIn {
   opacity: 0;
   -webkit-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0);
+  z-index: 9999;
+}
+
+#email-logo, #linked-in {
+  border-radius: 10px;
 }
 
 #scroll-div {
@@ -109,6 +114,7 @@ header.slideIn {
   opacity: 0;
   -webkit-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0);
+  z-index: -1;
 }
 
 #scroll-div > p {
@@ -164,6 +170,7 @@ header.slideIn {
   font-size: 80px;
   margin: 0;
   text-shadow: 1px 1px 1px gray;
+  text-align: center;
 }
 
 .content-container > p {
@@ -203,8 +210,8 @@ header.slideIn {
 
 .project-img {
   height: 40%;
-  width: 24%;
-  margin: 20px;
+  width: 28%;
+  margin: 30px;
   overflow: hidden;
   position: relative;
 }
@@ -230,7 +237,7 @@ header.slideIn {
   height: 100%;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: lightgray;
+  background-color: gray;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -248,26 +255,29 @@ header.slideIn {
 .overlay:hover {
   -webkit-opacity: 1;
   -moz-opacity: 1;
-  opacity: 0.8;
+  opacity: 0.95;
 }
 
 .overlay > p {
   font-size: 25px;
   margin: 5px;
+  color: white;
+  letter-spacing: 2px;
 }
 
 .overlay > a {
   font-size: 25px;
-  border: 3px solid black;
+  border: 3px solid white;
   margin: 10px;
-  padding: 2px 20px;
+  padding: 2px 20px 4px 20px;
   text-decoration: none;
-  color: black;
+  color: white;
+  letter-spacing: 2px;
 }
 
 .overlay > a:hover {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: gray;
 }
 
 #project2 {
@@ -296,3 +306,95 @@ header.slideIn {
   padding: 50px 200px 0 200px;
 }
 
+@media screen and (max-width: 900px) {
+  .content-container > p {
+    padding: 50px 75px 0 75px;
+  }
+
+  #project3 > .content-container > p {
+    padding: 50px 75px 0 75px;
+  }
+
+  .project-info {
+    height: 550px;
+  }
+
+  .project-img {
+    height: 35%;
+    width: 29%;
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .technology > p {
+    margin: 3px;
+    font-size: 18px;
+  }
+
+  .project-img {
+    height: 30%;
+    width: 30%;
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content-container > h1 {
+    font-size: 65px;
+  }
+
+  .hidden-image {
+    display: none;
+  }
+
+  .project-img {
+    height: 36%;
+    width: 45%;
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .project-img {
+    width: 55%;
+  }
+
+  .technology {
+    padding: 0 10px 0 10px;
+  }
+
+  .content-container > p {
+    padding: 30px 75px 0 75px;
+  }
+
+  #project2 > .content-container > h1 {
+    line-height: 1;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .project-info {
+    flex-direction: column;
+    height: 700px;
+    padding: 60px 0;
+  }
+
+  .project-img {
+    height: 30%;
+    width: 70%;
+    margin: 15px;
+  }
+
+  .hidden-image {
+    display: flex;
+  }
+
+  .technology {
+    margin-bottom: 30px;
+  }
+
+  #project2-info {
+    flex-direction: column-reverse;
+  }
+}
