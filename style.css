@@ -121,8 +121,19 @@ header.slideIn {
   padding-left: 8.5px;
 }
 
-.blank {
-  height: 400px;
+.aboutme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 1000px;
+}
+
+.aboutme > p {
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 0 100px;
+  line-height: 2;
 }
 
 .project-container {
@@ -209,11 +220,17 @@ header.slideIn {
 }
 
 .project-img {
-  height: 40%;
+  height: 42%;
   width: 28%;
   margin: 30px;
   overflow: hidden;
   position: relative;
+}
+
+#project3-info > .project-img {
+  height: 52%;
+  width: 40%;
+  margin: 50px;
 }
 
 .project-img > img {
@@ -273,6 +290,7 @@ header.slideIn {
   text-decoration: none;
   color: white;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 .overlay > a:hover {
@@ -282,6 +300,27 @@ header.slideIn {
 
 .hidden-links {
   display: none;
+}
+
+#project3-info > .project-img > .overlay > .hidden-links {
+  display: flex;
+  flex-direction: column;
+}
+
+#project3-info > .project-img > .overlay > .hidden-links > a {
+  font-size: 25px;
+  border: 3px solid white;
+  margin: 20px;
+  padding: 2px 20px 4px 20px;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+#project3-info > .project-img > .overlay > .hidden-links > a:hover {
+  background-color: white;
+  color: gray;
 }
 
 #project2 {
@@ -310,6 +349,19 @@ header.slideIn {
   padding: 50px 200px 0 200px;
 }
 
+@media screen and (max-width: 1150px) {
+  .project-img {
+    height: 40%;
+    width: 28%;
+  }
+
+  #project3-info > .project-img {
+    height: 48%;
+    width: 40%;
+    margin: 50px;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .content-container > p {
     padding: 50px 75px 0 75px;
@@ -328,6 +380,11 @@ header.slideIn {
     width: 29%;
     margin: 20px;
   }
+
+  #project3-info > .project-img {
+    height: 44%;
+    width: 45%;
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -341,6 +398,11 @@ header.slideIn {
     width: 30%;
     margin: 10px;
   }
+
+  #project3-info > .project-img {
+    height: 40%;
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -353,6 +415,12 @@ header.slideIn {
   }
 
   .project-img {
+    height: 36%;
+    width: 52%;
+    margin: 20px;
+  }
+
+  #project3-info > .project-img {
     height: 36%;
     width: 52%;
     margin: 20px;
@@ -393,6 +461,10 @@ header.slideIn {
     width: 55%;
   }
 
+  #project3-info > .project-img {
+    width: 55%;
+  }
+
   .content-container > p {
     padding: 30px 75px 0 75px;
   }
@@ -409,7 +481,17 @@ header.slideIn {
     padding: 60px 0;
   }
 
+  #project3-info {
+    height: 500px;
+  }
+
   .project-img {
+    height: 30%;
+    width: 70%;
+    margin: 15px;
+  }
+
+  #project3-info > .project-img {
     height: 30%;
     width: 70%;
     margin: 15px;
