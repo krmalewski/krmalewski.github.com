@@ -15,6 +15,10 @@ $(() => {
     header[0].classList.add('slideIn');
   }, 1000);
 
+  header.click(() => {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+  });
+
   const github = $('#github-logo');
   const email = $('#email-logo');
   const linkedIn = $('#linked-in');

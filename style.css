@@ -40,15 +40,11 @@ header.slideIn {
 .header-div {
   text-align: center;
   letter-spacing: 3px;
+  z-index: 9999;
 }
 
-.header-div > a {
-  text-decoration: none;
-  color: gray;
-}
-
-.header-div > a:hover {
-  color: black;
+.header-div > p:hover {
+  cursor: pointer;
 }
 
 .land {
@@ -161,12 +157,12 @@ header.slideIn {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 999;
   color: white;
 }
 
 .content-container > h1{
-  z-index: 9999;
+  z-index: 999;
   font-size: 80px;
   margin: 0;
   text-shadow: 1px 1px 1px gray;
@@ -174,7 +170,7 @@ header.slideIn {
 }
 
 .content-container > p {
-  z-index: 9999;
+  z-index: 999;
   font-size: 20px;
   letter-spacing: 1.5px;
   margin: 0;
@@ -206,6 +202,10 @@ header.slideIn {
   font-size: 20px;
   color: gray;
   text-align: center;
+}
+
+.mobile-links {
+  display: none;
 }
 
 .project-img {
@@ -245,11 +245,11 @@ header.slideIn {
   -webkit-opacity: 0;
   -moz-opacity: 0;
   opacity: 0;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  -ms-transition: all 0.7s ease;
+  -o-transition: all 0.7s ease;
+  transition: all 0.7s ease;
 }
 
 .overlay:hover {
@@ -278,6 +278,10 @@ header.slideIn {
 .overlay > a:hover {
   background-color: white;
   color: gray;
+}
+
+.hidden-links {
+  display: none;
 }
 
 #project2 {
@@ -350,18 +354,43 @@ header.slideIn {
 
   .project-img {
     height: 36%;
-    width: 45%;
+    width: 52%;
+    margin: 20px;
+  }
+
+  .technology {
+    padding: 0 10px 0 10px;
+  }
+
+  .overlay > p, .overlay > a {
+    display: none;
+  }
+
+  .hidden-links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hidden-links > a {
+    font-size: 25px;
+    border: 3px solid white;
     margin: 10px;
+    padding: 2px 20px 4px 20px;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  .hidden-links > a:hover {
+    background-color: white;
+    color: gray;
   }
 }
 
 @media screen and (max-width: 500px) {
   .project-img {
     width: 55%;
-  }
-
-  .technology {
-    padding: 0 10px 0 10px;
   }
 
   .content-container > p {
@@ -386,12 +415,56 @@ header.slideIn {
     margin: 15px;
   }
 
+  .content-container > h1 {
+    font-size: 50px;
+  }
+
+  .content-container > p {
+    padding: 15px 30px 20px 30px;
+    font-size: 19px;
+  }
+
+  #project3 > .content-container > p {
+    padding: 15px 30px 20px 30px;
+    font-size: 19px;
+  }
+
   .hidden-image {
     display: flex;
   }
 
   .technology {
     margin-bottom: 30px;
+  }
+
+  .mobile-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .mobile-links > a {
+    font-size: 25px;
+    border: 3px solid gray;
+    margin: 10px;
+    padding: 2px 20px 4px 20px;
+    text-decoration: none;
+    color: gray;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  .mobile-links > a:hover {
+    background-color: gray;
+    color: white;
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  .hidden-links {
+    display: none;
   }
 
   #project2-info {
