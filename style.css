@@ -475,6 +475,14 @@ header.slideIn {
 }
 
 @media only screen and (max-width: 400px) {
+  .aboutme > p {
+    padding: 0 20px;
+  }
+
+  .content-container > h1 {
+    text-shadow: none;
+  }
+
   .project-info {
     flex-direction: column;
     height: 700px;
