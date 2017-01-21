@@ -2,8 +2,6 @@
 console.log('JS connected');
 
 $(() => {
-
-  console.log($(window).width());
   // set landing page to height of window
   const windowHeight = $(window).height();
   $('.land').css('height', windowHeight - 50);
@@ -15,6 +13,7 @@ $(() => {
     header[0].classList.add('slideIn');
   }, 1000);
 
+  // when header is clicked, page will scroll back to the top
   header.click(() => {
     $("html, body").animate({ scrollTop: 0 }, "slow");
   });
@@ -99,16 +98,25 @@ $(() => {
     };
   };
 
+  // when page is scrolled down, landing div and about me will gradually fade away to transparent
   function fadeOnScroll() {
+    const aboutme = $('.aboutme');
     const scrollY = window.scrollY;
     const windowHeight = window.innerHeight/1.4;
+    const aboutmeOffset = aboutme.offset().top;
 
-    let opacity = 0.95 - (scrollY / windowHeight);
-    $('.land').css('opacity', opacity);
+    let opacityLanding = 0.95 - (scrollY / windowHeight);
+    let opacityAboutme = Math.round(((scrollY - aboutmeOffset) / windowHeight));
+    // console.log(scrollY)
+    console.log(opacityAboutme)
+    $('.land').css('opacity', opacityLanding);
+    // if (scrollY >= aboutmeOffset) {
+    //   let opacityAboutme =
+    // }
   }
 
   $(window).scroll(debounce(fadeOnScroll));
 
-  // $('.background-img').css('clip', '')
+
 })
 

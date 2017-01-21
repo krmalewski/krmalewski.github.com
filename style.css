@@ -349,7 +349,7 @@ header.slideIn {
   padding: 50px 200px 0 200px;
 }
 
-@media screen and (max-width: 1150px) {
+@media only screen and (max-width: 1150px) {
   .project-img {
     height: 40%;
     width: 28%;
@@ -362,7 +362,7 @@ header.slideIn {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media only screen and (max-width: 900px) {
   .content-container > p {
     padding: 50px 75px 0 75px;
   }
@@ -387,7 +387,7 @@ header.slideIn {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media only screen and (max-width: 700px) {
   .technology > p {
     margin: 3px;
     font-size: 18px;
@@ -405,7 +405,7 @@ header.slideIn {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   .content-container > h1 {
     font-size: 65px;
   }
@@ -456,7 +456,7 @@ header.slideIn {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media only screen and (max-width: 500px) {
   .project-img {
     width: 55%;
   }
@@ -474,7 +474,7 @@ header.slideIn {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media only screen and (max-width: 400px) {
   .project-info {
     flex-direction: column;
     height: 700px;
