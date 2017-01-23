@@ -349,6 +349,38 @@ header.slideIn {
   padding: 50px 200px 0 200px;
 }
 
+footer {
+  height: 60px;
+  background-color: #B76EB7;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+a {
+  height: 100%;
+}
+
+footer img {
+  display: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+  max-height: 50%;
+  padding: 20px 20px;
+  opacity: 0.8;
+}
+
+#foot-github {
+  max-width: 58%;
+  max-height: 58%;
+  padding-top: 17px;
+}
+
+
 @media only screen and (max-width: 1150px) {
   .project-img {
     height: 40%;
