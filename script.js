@@ -106,9 +106,9 @@ $(() => {
     const aboutmeOffset = aboutme.offset().top;
 
     let opacityLanding = 0.95 - (scrollY / windowHeight);
-    let opacityAboutme = Math.round(((scrollY - aboutmeOffset) / windowHeight));
-    // console.log(scrollY)
-    console.log(opacityAboutme)
+    // let opacityAboutme = Math.round(((scrollY - aboutmeOffset) / windowHeight));
+
+    // console.log(opacityAboutme)
     $('.land').css('opacity', opacityLanding);
     // if (scrollY >= aboutmeOffset) {
     //   let opacityAboutme =
