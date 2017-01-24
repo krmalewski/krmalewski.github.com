@@ -81,41 +81,74 @@ $(() => {
     linkedIn.removeClass('jello')
   })
 
+  // Init ScrollMagic
+  const controller = new ScrollMagic.Controller();
+
+  // build a new scence to fade out landing info
+  const landingFadeOut =  new ScrollMagic.Scene({
+    triggerElement: '.icons',
+    triggerHook: 0.2
+  })
+  .setClassToggle('.land', 'fade-out')
+  .addIndicators({
+    name:'land'
+  })
+  .addTo(controller);
+
+  // build a new scene to fade in about me
+  const aboutMeFade = new ScrollMagic.Scene({
+    triggerElement: '.aboutme p',
+    duration: '60%',
+    triggerHook: 0.8
+  })
+  .setClassToggle('.aboutme', 'fade-in')
+  .addIndicators()
+  .addTo(controller);
+
+  // loop from each project-info element and create a scene for each container
+  $('.project-info').each(function() {
+    const projectsFadeIn = new ScrollMagic.Scene({
+      triggerElement: this
+    })
+    .setClassToggle(this, 'fade-in')
+    .addIndicators()
+    .addTo(controller);
+  });
 
   // Code attributed to Wes Bos' 30 Days of JS Tutorials Day 13
-  function debounce(func, wait = 10, immediate = true) {
-    var timeout;
-    return function() {
-      var context = this, args = arguments;
-      var later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  };
+  // function debounce(func, wait = 10, immediate = true) {
+  //   var timeout;
+  //   return function() {
+  //     var context = this, args = arguments;
+  //     var later = function() {
+  //       timeout = null;
+  //       if (!immediate) func.apply(context, args);
+  //     };
+  //     var callNow = immediate && !timeout;
+  //     clearTimeout(timeout);
+  //     timeout = setTimeout(later, wait);
+  //     if (callNow) func.apply(context, args);
+  //   };
+  // };
 
   // when page is scrolled down, landing div and about me will gradually fade away to transparent
-  function fadeOnScroll() {
-    const aboutme = $('.aboutme');
-    const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight/1.4;
-    const aboutmeOffset = aboutme.offset().top;
+  // function fadeOnScroll() {
+  //   const aboutme = $('.aboutme');
+  //   const scrollY = window.scrollY;
+  //   const windowHeight = window.innerHeight/1.4;
+  //   const aboutmeOffset = aboutme.offset().top;
 
-    let opacityLanding = 0.95 - (scrollY / windowHeight);
-    // let opacityAboutme = Math.round(((scrollY - aboutmeOffset) / windowHeight));
+  //   let opacityLanding = 0.95 - (scrollY / windowHeight);
+  //   // let opacityAboutme = Math.round(((scrollY - aboutmeOffset) / windowHeight));
 
-    // console.log(opacityAboutme)
-    $('.land').css('opacity', opacityLanding);
-    // if (scrollY >= aboutmeOffset) {
-    //   let opacityAboutme =
-    // }
-  }
+  //   // console.log(opacityAboutme)
+  //   $('.land').css('opacity', opacityLanding);
+  //   // if (scrollY >= aboutmeOffset) {
+  //   //   let opacityAboutme =
+  //   // }
+  // }
 
-  $(window).scroll(debounce(fadeOnScroll));
+  // $(window).scroll(debounce(fadeOnScroll));
 
 
 })
