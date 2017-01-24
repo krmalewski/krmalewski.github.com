@@ -171,7 +171,7 @@ header.slideIn {
   height:100%;
   width: 100%;
   opacity: 0.8;
-  z-index: -1;
+  z-index: 1;
   margin-top: -500px;
   overflow: hidden;
 }
@@ -179,7 +179,7 @@ header.slideIn {
 .image-container > img {
   width: 102%;
   height: 150%;
-  z-index: -1;
+  z-index: 1;
   -webkit-filter: blur(4px);
   -moz-filter: blur(4px);
   -o-filter: blur(4px);
@@ -194,12 +194,12 @@ header.slideIn {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 999;
+  z-index: 2;
   color: white;
 }
 
 .content-container > h1{
-  z-index: 999;
+  z-index: 2;
   font-size: 80px;
   margin: 0;
   text-shadow: 1px 1px 1px gray;
@@ -207,7 +207,7 @@ header.slideIn {
 }
 
 .content-container > p {
-  z-index: 999;
+  z-index: 2;
   font-size: 20px;
   letter-spacing: 1.5px;
   margin: 0;
@@ -366,6 +366,11 @@ header.slideIn {
   color: white;
 }
 
+.project-container.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 #project2 > h1 {
   font-size: 80px;
   margin: 0;
@@ -377,6 +382,17 @@ header.slideIn {
   margin: 0;
   padding: 50px 150px 0 150px;
   text-align: center;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+}
+
+.slide-up.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 #project3 > .content-container > p {

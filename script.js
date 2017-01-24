@@ -81,6 +81,7 @@ $(() => {
     linkedIn.removeClass('jello')
   })
 
+  // Code help from ScrollMagic101 at https://ihatetomatoes.net
   // Init ScrollMagic
   const controller = new ScrollMagic.Controller();
 
@@ -117,6 +118,15 @@ $(() => {
     .addTo(controller);
   })
 
+  $('.slide-up').each(function() {
+    const fadeContentIn = new ScrollMagic.Scene({
+      triggerElement: '#project2',
+      triggerHook: 0.7
+    })
+    .setClassToggle(this, 'fade-in')
+    .addTo(controller);
+  })
+
   // loop from each project-info element and create a scene for each container
   $('.project-info').each(function() {
     const projectsFadeIn = new ScrollMagic.Scene({
@@ -125,42 +135,5 @@ $(() => {
     .setClassToggle(this, 'fade-in')
     .addTo(controller);
   });
-
-  // Code attributed to Wes Bos' 30 Days of JS Tutorials Day 13
-  // function debounce(func, wait = 10, immediate = true) {
-  //   var timeout;
-  //   return function() {
-  //     var context = this, args = arguments;
-  //     var later = function() {
-  //       timeout = null;
-  //       if (!immediate) func.apply(context, args);
-  //     };
-  //     var callNow = immediate && !timeout;
-  //     clearTimeout(timeout);
-  //     timeout = setTimeout(later, wait);
-  //     if (callNow) func.apply(context, args);
-  //   };
-  // };
-
-  // when page is scrolled down, landing div and about me will gradually fade away to transparent
-  // function fadeOnScroll() {
-  //   const aboutme = $('.aboutme');
-  //   const scrollY = window.scrollY;
-  //   const windowHeight = window.innerHeight/1.4;
-  //   const aboutmeOffset = aboutme.offset().top;
-
-  //   let opacityLanding = 0.95 - (scrollY / windowHeight);
-  //   // let opacityAboutme = Math.round(((scrollY - aboutmeOffset) / windowHeight));
-
-  //   // console.log(opacityAboutme)
-  //   $('.land').css('opacity', opacityLanding);
-  //   // if (scrollY >= aboutmeOffset) {
-  //   //   let opacityAboutme =
-  //   // }
-  // }
-
-  // $(window).scroll(debounce(fadeOnScroll));
-
-
 })
 
