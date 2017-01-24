@@ -90,9 +90,6 @@ $(() => {
     triggerHook: 0.2
   })
   .setClassToggle('.land', 'fade-out')
-  .addIndicators({
-    name:'land'
-  })
   .addTo(controller);
 
   // build a new scene to fade in about me
@@ -102,8 +99,23 @@ $(() => {
     triggerHook: 0.8
   })
   .setClassToggle('.aboutme', 'fade-in')
-  .addIndicators()
   .addTo(controller);
+
+  // parallax
+  // const parallaxTl = new TimelineMax();
+  // parallaxTl
+  //   .from('#content1', 0.5, {autoAlpha: 0, ease: Power0.easeNone}, 0.5)
+  //   .from('#image1', 2, {y: '-50%', ease: Power0.easeNone}, 0);
+
+  $('.parallax').each(function() {
+    const slideParallaxScence = new ScrollMagic.Scene({
+      triggerElement: this,
+      triggerHook: 1,
+      duration: '100%'
+    })
+    .setTween(TweenMax.from(this.children[1], 2, {y: '-50%', ease: Power0.easeNone}, 0))
+    .addTo(controller);
+  })
 
   // loop from each project-info element and create a scene for each container
   $('.project-info').each(function() {
@@ -111,7 +123,6 @@ $(() => {
       triggerElement: this
     })
     .setClassToggle(this, 'fade-in')
-    .addIndicators()
     .addTo(controller);
   });
 
