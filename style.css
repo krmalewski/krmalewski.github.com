@@ -1,7 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: rgb(255, 255, 255);
   margin: 0;
+  padding: 0;
   font-family: 'Open Sans Condensed', sans-serif;
+  height: 100%;
 }
 
 header {
@@ -352,7 +359,6 @@ header.slideIn {
 footer {
   height: 60px;
   background-color: #B76EB7;
-  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -362,6 +368,9 @@ footer {
 
 footer a {
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 footer img {
@@ -370,14 +379,13 @@ footer img {
   margin-right: auto;
   max-width: 50%;
   max-height: 50%;
-  padding: 20px 20px;
+  padding: 0 20px;
   opacity: 0.8;
 }
 
 #foot-github {
   max-width: 58%;
   max-height: 58%;
-  padding-top: 17px;
 }
 
 
