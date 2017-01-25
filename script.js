@@ -102,12 +102,8 @@ $(() => {
   .setClassToggle('.aboutme', 'fade-in')
   .addTo(controller);
 
-  // parallax
-  // const parallaxTl = new TimelineMax();
-  // parallaxTl
-  //   .from('#content1', 0.5, {autoAlpha: 0, ease: Power0.easeNone}, 0.5)
-  //   .from('#image1', 2, {y: '-50%', ease: Power0.easeNone}, 0);
 
+  // parallax effect
   $('.parallax').each(function() {
     const slideParallaxScence = new ScrollMagic.Scene({
       triggerElement: this,
@@ -118,6 +114,8 @@ $(() => {
     .addTo(controller);
   })
 
+
+  // Moodie Foodie intro will slide up since there is not parallax effect here
   $('.slide-up').each(function() {
     const fadeContentIn = new ScrollMagic.Scene({
       triggerElement: '#project2',
