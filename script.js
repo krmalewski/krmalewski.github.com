@@ -36,10 +36,10 @@ $(() => {
   }, 1600);
   setTimeout(() => {
     scroll.addClass('animated fadeInUpScroll');
-  }, 2000);
+  }, 1700);
   setTimeout(() => {
     scrollIcon.addClass('animated infinite bounce')
-  }, 3000);
+  }, 4000);
 
   // add animations to icons on mouseenter
   email.on('mouseenter', function() {
@@ -128,7 +128,8 @@ $(() => {
   // loop from each project-info element and create a scene for each container
   $('.project-info').each(function() {
     const projectsFadeIn = new ScrollMagic.Scene({
-      triggerElement: this
+      triggerElement: this,
+      triggerHook: 0.7
     })
     .setClassToggle(this, 'fade-in')
     .addTo(controller);
